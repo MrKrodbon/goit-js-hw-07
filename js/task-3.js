@@ -1,32 +1,40 @@
-class StringBuilder {
-  #value;
-  constructor(initialValue) {
-    this.#value = initialValue;
-  }
+const input = document.querySelector("#name-input");
+const outputName = document.querySelector("#name-output");
+const h1Element = document.querySelector("h1");
 
-  getValue() {
-    return this.#value.toString();
-  }
+input.addEventListener("input", (event) => {
+  let trimmedValue = (outputName.textContent =
+    event.currentTarget.value.trim());
 
-  padEnd(str) {
-    this.#value = this.#value + str;
+  if (trimmedValue === "") {
+    outputName.textContent = "Anonymous";
   }
+});
 
-  padStart(str) {
-    this.#value = str + this.#value;
-  }
+input.setAttribute(
+  "style",
+  `
+    border-radius: 8px;
+    padding-left: 16px;
+    width: 360px;
+    height: 40px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    color: #2e2f42;
+  `
+);
 
-  padBoth(str) {
-    this.padStart(str);
-    this.padEnd(str);
-  }
-}
-
-const builder = new StringBuilder(".");
-console.log(builder.getValue()); // "."
-builder.padStart("^");
-console.log(builder.getValue()); // "^."
-builder.padEnd("^");
-console.log(builder.getValue()); // "^.^"
-builder.padBoth("=");
-console.log(builder.getValue()); // "=^.^="
+h1Element.setAttribute(
+  "style",
+  `
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+    color: #2e2f42;
+    `
+);
