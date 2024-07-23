@@ -51,3 +51,14 @@ const changeColor = (event) => {
 };
 
 changeColorBtn.addEventListener("click", changeColor);
+
+changeColorBtn.addEventListener("mouseover", () => {
+  changeColorBtn.style.backgroundColor = "#6C8CFF";
+  changeColorBtn.style.cursor = "pointer";
+  changeColorBtn.style.transition =
+    " background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)";
+});
+
+changeColorBtn.addEventListener("mouseleave", () => {
+  changeColorBtn.style.backgroundColor = "#4E75FF";
+});

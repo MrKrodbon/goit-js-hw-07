@@ -15,6 +15,7 @@ input.setAttribute(
   "style",
   `
     border-radius: 8px;
+    border: 1px solid #808080;
     padding-left: 16px;
     width: 360px;
     height: 40px;

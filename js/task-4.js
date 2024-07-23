@@ -85,3 +85,14 @@ submitBtn.setAttribute(
     color: #fff;
     `
 );
+
+submitBtn.addEventListener("mouseover", () => {
+  submitBtn.style.backgroundColor = "#6C8CFF";
+  submitBtn.style.cursor = "pointer";
+  submitBtn.style.transition =
+    " background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)";
+});
+
+submitBtn.addEventListener("mouseleave", () => {
+  submitBtn.style.backgroundColor = "#4E75FF";
+});
