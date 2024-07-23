@@ -93,7 +93,7 @@ destroyBtn.addEventListener("mouseleave", () => {
 
 let increase = 30;
 createBtn.addEventListener("click", () => {
-  if (input.value > 1 && input.value <= 99) {
+  if (input.value >= 1 && input.value <= 99) {
     for (let index = 0; index < input.value; index++) {
       let box = document.createElement("div");
       box.style.width = `${increase}px`;
