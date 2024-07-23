@@ -93,15 +93,17 @@ destroyBtn.addEventListener("mouseleave", () => {
 
 let increase = 30;
 createBtn.addEventListener("click", () => {
-  for (let index = 0; index < input.value; index++) {
-    console.log(increase);
-
-    let box = document.createElement("div");
-    box.style.width = `${increase}px`;
-    box.style.height = `${increase}px`;
-    box.style.backgroundColor = getRandomHexColor();
-    boxesList.prepend(box);
-    increase += 10;
+  if (input.value > 1 && input.value <= 99) {
+    for (let index = 0; index < input.value; index++) {
+      let box = document.createElement("div");
+      box.style.width = `${increase}px`;
+      box.style.height = `${increase}px`;
+      box.style.backgroundColor = getRandomHexColor();
+      boxesList.prepend(box);
+      increase += 10;
+    }
+  } else {
+    alert("Input number more than 1 or less than 100");
   }
 });
 
