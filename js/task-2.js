@@ -25,49 +25,15 @@ const images = [
   },
 ];
 
-const gallery = document.querySelectorAll(".gallery");
+const gallery = document.querySelector(".gallery");
 const markup = images
   .map(
     (currentImgOfArr) =>
       `<li class = "li-element">
-      <img class ="gallery-image" src=${currentImgOfArr.url} arl="${currentImgOfArr.alt}">
+      <img class ="gallery-image" src=${currentImgOfArr.url} arl="${currentImgOfArr.alt}" style="width:360px; height:300px;">
       </li>
       `
   )
   .join("");
 
-gallery.forEach((imgList) => {
-  imgList.insertAdjacentHTML("afterbegin", markup);
-  imgList.setAttribute(
-    "style",
-    `
-      display: flex;
-      flex-direction:row;
-      flex-wrap: wrap;
-      column-gap:24px;
-      row-gap:48px;
-    `
-  );
-});
-
-const galleryImage = document.querySelectorAll(".gallery-image");
-galleryImage.forEach((imgElem) => {
-  imgElem.setAttribute(
-    "style",
-    `
-      width: 360px;
-      height: 300px;
-    `
-  );
-});
-
-const liElement = document.querySelectorAll(".li-element");
-liElement.forEach((li) => {
-  li.setAttribute(
-    "style",
-    `
-      flex-basis: calc((100% - 24px)/ 4);
-      list-style: none;
-    `
-  );
-});
+gallery.insertAdjacentHTML("afterbegin", markup);
