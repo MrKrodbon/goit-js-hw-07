@@ -8,6 +8,7 @@ const input = document.querySelector("#controls input");
 const boxesList = document.querySelector("#boxes");
 const createBtn = document.querySelector("[data-create]");
 const destroyBtn = document.querySelector("[data-destroy]");
+const fragment = document.createDocumentFragment();
 
 function createBoxes(amount) {
   if (input.value >= 1 && input.value <= 100) {
@@ -17,9 +18,10 @@ function createBoxes(amount) {
       box.style.width = `${increase}px`;
       box.style.height = `${increase}px`;
       box.style.backgroundColor = getRandomHexColor();
-      boxesList.appendChild(box);
+      fragment.appendChild(box);
       increase += 10;
     }
+    boxesList.appendChild(fragment);
   }
   input.value = "";
 }
